@@ -13,7 +13,7 @@ namespace Blog.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseSqlServer("Server=DESKTOP-BKLEGIN\\SQLEXPRESS2019; Database=Blog; User ID=sa;Password=sa123");
+            options.UseSqlServer("Server=DESKTOP-BKLEGIN\\SQLEXPRESS2019; Database=BlogFluentMap; User ID=sa;Password=sa123");
             //options.LogTo(Console.WriteLine);
         }
 
