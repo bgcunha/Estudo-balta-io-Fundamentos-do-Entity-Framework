@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -18,12 +19,9 @@ namespace Blog.Models
         public DateTime CreateDate { get; set; }
         public DateTime LastUpdateDate { get; set; }
 
-        [ForeignKey("CategoryId")]
-        public int CategoryId { get; set; }
         public Category Category { get; set; }
-
-        [ForeignKey("AuthorId")]
-        public int AuthorId { get; set; }
         public User Author { get; set; }
+        public IList<Tag> Tags { get; set; }
+
     }
 }

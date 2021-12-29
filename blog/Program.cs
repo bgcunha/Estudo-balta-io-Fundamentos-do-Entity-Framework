@@ -10,36 +10,41 @@ namespace Blog
     {
         static void Main(string[] args)
         {
-            //try
-            //{
+            // try
+            // {
             using var context = new BlogDataContext();
 
-            // var user = new User
-            // {
-            //     Name = "Bruno Gomes",
-            //     Slug = "brunogomes",
-            //     Email = "brunogomes@bruno.io",
-            //     Bio = "Anaista Senior",
-            //     Image = "https://brunogomes.io",
-            //     PasswordHash = "123456789"
-            // };
+            var user = new User
+            {
+                Name = "Bruno Gomes2",
+                Slug = "brunogomes2",
+                Email = "brunogomes@bruno.com",
+                Bio = "Analista Senior",
+                Image = "https://brunogomes.io",
+                PasswordHash = "123456789"
+            };
 
-            // var category = new Category { Name = "Backend", Slug = "backend" };
-
-            // var post = new Post
-            // {
-            //     Author = user,
-            //     Category = category,
-            //     Body = "<p>Hello world</p>",
-            //     Slug = "comecando-com-ef-core",
-            //     Summary = "Neste artigo vamos aprender EF core",
-            //     Title = "Começando com EF Core",
-            //     CreateDate = DateTime.Now,
-            //     LastUpdateDate = DateTime.Now,
-            // };
-
-            // context.Posts.Add(post); // Não adicionei autor nem categoria
+            // context.Users.Add(user);
             // context.SaveChanges();
+
+            //var user = context.Users.FirstOrDefault();
+            //var category = context.Categories.FirstOrDefault();
+            var category = new Category { Name = "Front-End", Slug = "frontend" };
+
+            var post = new Post
+            {
+                Author = user,
+                Category = category,
+                Body = "<p>Hello world</p>",
+                Slug = "comecando-com-front",
+                Summary = "Neste artigo vamos aprender EF core",
+                Title = "Começando com EF Core",
+                CreateDate = DateTime.Now,
+                LastUpdateDate = DateTime.Now,
+            };
+
+            context.Posts.Add(post); // Não adicionei autor nem categoria
+            context.SaveChanges();
 
             // var posts = context
             //     .Posts
@@ -51,6 +56,8 @@ namespace Blog
 
             // foreach (var post in posts)
             //     Console.WriteLine($"{post.Title} por {post.Author.Name} em {post.Category.Name}");
+
+            // Console.ReadKey();
 
             // var post = context
             //     .Posts
@@ -65,11 +72,11 @@ namespace Blog
             // context.Posts.Update(post);
             // context.SaveChanges();
 
-            //}
-            //catch (Exception ex)
-            //{
-            //    Console.WriteLine($"ERRO>>>:{ex.Message}");
-            //}
+            // }
+            // catch (Exception ex)
+            // {
+            //     Console.WriteLine($"ERRO>>>:{ex.Message}");
+            // }
 
         }
     }
